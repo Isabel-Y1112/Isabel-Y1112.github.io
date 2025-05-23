@@ -21,21 +21,21 @@
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     }
     table {
-        width: 75%;
+        width: 75%; /* Table width set to 75% of the div */
         margin: 20px auto;
-        border-collapse: collapse;
-        border: 3px solid rgba(50, 50, 50, 1);
+        border-collapse: collapse; /* Collapses borders into a single line */
+        border: 3px solid rgba(50, 50, 50, 1); /* Dark border, 3px thick */
     }
     td {
-        border: 3px solid rgba(50, 50, 50, 1);
-        padding: 10px;
-        text-align: center;
-        vertical-align: middle;
-        background-color: rgba(255, 230, 230, 0.9);
+        border: 3px solid rgba(50, 50, 50, 1); /* Dark border for table cells */
+        padding: 10px; /* Adds padding inside table cells */
+        text-align: center; /* Centers text horizontally */
+        vertical-align: middle; /* Centers text vertically */
+        background-color: rgba(255, 230, 230, 0.9); /* Light pink background for cells */
     }
     img {
-        width: 300px;
-        height: auto;
+        width: 300px; /* Sets the width of album images */
+        height: auto; /* Maintains aspect ratio */
     }
 </style>
 </head>
@@ -51,17 +51,17 @@
                 <td><strong>Fun Fact / Song List</strong></td>
             </tr>
             <tr>
-                <td><img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FThriller_%2528album%2529&psig=AOvVaw0e2o3uOhfX5VpV7ksD3FX1&ust=1748049095920000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOiAwsi0uI0DFQAAAAAdAAAAABAE" alt="Album 1 Cover"></td>
+                <td><img src="album1.jpg" alt="Album 1 Cover"></td>
                 <td><strong>Album 1: Thriller</strong><br>Released: November 29, 1982</td>
                 <td>Includes iconic tracks like "Thriller," "Billie Jean," and "Beat It."</td>
             </tr>
             <tr>
-                <td><img src="https://www.google.com/imgres?q=To%20Pimp%20a%20Butterfly&imgurl=https%3A%2F%2Fi.icanvas.com%2FAKC31%3Fd%3D3%26s%3Dxl%26bg%3Dc%26sh%3Ds%26p%3D1%26t%3D1734533455&imgrefurl=https%3A%2F%2Fwww.icanvas.com%2Fcanvas-print%2Fkendrick-lamar-to-pimp-a-butterfly-akc31&docid=NTkxgICwUvrX8M&tbnid=KVmLwgiKQl3pTM&vet=12ahUKEwj2pfLXtriNAxUd4zQHHXyFEbEQM3oECGcQAA..i&w=1000&h=750&hcb=2&ved=2ahUKEwj2pfLXtriNAxUd4zQHHXyFEbEQM3oECGcQAA" alt="Album 2 Cover"></td>
-                <td><strong>Album 2: To Pimp a Butterfly</strong><br>Released:  March 15, 2015</td>
-                <td>Includes hits like "King Kunta," "Alright," and "These Walls.</td>
+                <td><img src="album2.jpg" alt="Album 2 Cover"></td>
+                <td><strong>Album 2: To Pimp a Butterfly</strong><br>Released: March 15, 2015</td>
+                <td>Includes hits like "King Kunta," "Alright," and "These Walls."</td>
             </tr>
             <tr>
-                <td><img src="https://www.google.com/imgres?q=Rumours&imgurl=https%3A%2F%2Fmedia.npr.org%2Fassets%2Fimg%2F2013%2F01%2F29%2Fhighres-fleetwood-mac-rumours_sq-496d22b156d14a8c7e5fbfd77ab1d54790d019b3.jpg%3Fs%3D1100%26c%3D50%26f%3Djpeg&imgrefurl=https%3A%2F%2Fwww.npr.org%2Fsections%2Fallsongs%2F2013%2F01%2F29%2F170552631%2Fwhy-ive-never-liked-fleetwood-macs-rumours&docid=HXeIMmDjDcL5ZM&tbnid=hl38M3jEcVly8M&vet=12ahUKEwi4kdb0t7iNAxXHklYBHZrLKIwQM3oFCIkBEAA..i&w=1100&h=1100&hcb=2&ved=2ahUKEwi4kdb0t7iNAxXHklYBHZrLKIwQM3oFCIkBEAA" alt="Album 3 Cover"></td>
+                <td><img src="album3.jpg" alt="Album 3 Cover"></td>
                 <td><strong>Album 3: Rumours</strong><br>Released: February 4, 1977</td>
                 <td>Classic songs like "Go Your Own Way," "Dreams," and "The Chain."</td>
             </tr>
