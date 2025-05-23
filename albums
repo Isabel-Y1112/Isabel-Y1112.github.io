@@ -51,17 +51,17 @@
                 <td><strong>Fun Fact / Song List</strong></td>
             </tr>
             <tr>
-                <td><img src="album1.jpg" alt="Album 1 Cover"></td>
+                <td><img src="Thriller.jpeg" alt="Album 1 Cover"></td>
                 <td><strong>Album 1: Thriller</strong><br>Released: November 29, 1982</td>
                 <td>Includes iconic tracks like "Thriller," "Billie Jean," and "Beat It."</td>
             </tr>
             <tr>
-                <td><img src="album2.jpg" alt="Album 2 Cover"></td>
+                <td><img src="To_Pimp_a_Butterfly.jpeg" alt="Album 2 Cover"></td>
                 <td><strong>Album 2: To Pimp a Butterfly</strong><br>Released: March 15, 2015</td>
                 <td>Includes hits like "King Kunta," "Alright," and "These Walls."</td>
             </tr>
             <tr>
-                <td><img src="album3.jpg" alt="Album 3 Cover"></td>
+                <td><img src="Rumours.jpeg" alt="Album 3 Cover"></td>
                 <td><strong>Album 3: Rumours</strong><br>Released: February 4, 1977</td>
                 <td>Classic songs like "Go Your Own Way," "Dreams," and "The Chain."</td>
             </tr>
