@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameplay - Minecraft World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2E7D32',
+                        secondary: '#5D4037',
+                        accent: '#FFA000',
+                        dark: '#1A202C',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        minecraft: ['Minecraft', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .block-border {
+                border: 3px solid rgba(0, 0, 0, 0.3);
+                box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.2);
+            }
+        }
+    </style>
+</head>
+<body class="bg-light text-dark font-minecraft">
+    <!-- 导航栏 -->
+    <nav class="bg-primary text-white shadow-lg fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fa fa-cubes text-2xl"></i>
+                <span class="text-xl font-bold">Minecraft World</span>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-accent transition-colors duration-300">Home</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300">Gameplay</a>
+                <a href="features.html" class="hover:text-accent transition-colors duration-300">Features</a>
+                <a href="community.html" class="hover:text-accent transition-colors duration-300">Community</a>
+            </div>
+            <div class="md:hidden">
+                <button id="menu-toggle" class="focus:outline-none">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-primary/95 backdrop-blur-md">
+            <div class="container mx-auto px-4 py-3 flex flex-col space-y-3">
+                <a href="index.html" class="hover:text-accent transition-colors duration-300 py-2">Home</a>
+                <a href="#" class="hover:text-accent transition-colors duration-300 py-2">Gameplay</a>
+                <a href="features.html" class="hover:text-accent transition-colors duration-300 py-2">Features</a>
+                <a href="community.html" class="hover:text-accent transition-colors duration-300 py-2">Community</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区域 -->
+    <header class="pt-24 pb-16 bg-gradient-to-b from-primary/20 to-light">
+        <div class="container mx-auto px-4">
+            <div class="text-center">
+                <h1 class="text-[clamp(2.5rem,5vw,4rem)] font-bold text-dark text-shadow mb-4">Gameplay</h1>
+                <p class="text-lg max-w-3xl mx-auto">Explore the endless possibilities of Minecraft gameplay modes, mechanics, and adventures.</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- 游戏模式 -->
+            <section id="game-modes" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">Game Modes</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" id="creative">
+                        <img src="https://picsum.photos/seed/minecraft8/600/400" alt="Minecraft creative mode with floating islands" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">Creative Mode</h3>
+                            <p>In Creative mode, players have unlimited resources and the ability to fly. This mode is perfect for building elaborate structures, creating art, or experimenting with redstone contraptions without the worry of survival.</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Unlimited Resources</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Fly</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">No Hunger</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" id="survival">
+                        <img src="https://picsum.photos/seed/minecraft9/600/400" alt="Minecraft survival mode at night with monsters" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">Survival Mode</h3>
+                            <p>Survival mode challenges players to collect resources, craft tools, build shelters, and survive against hostile mobs. Hunger and health become important factors, and players must manage their inventory wisely.</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Resource Management</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Combat</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Hunger</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-2 transition-all duration-300" id="adventure">
+                        <img src="https://picsum.photos/seed/minecraft10/600/400" alt="Minecraft adventure mode with custom map" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-3 text-primary">Adventure Mode</h3>
+                            <p>Adventure mode is designed for playing custom maps and adventures created by other players. It restricts block placement and destruction to predefined rules, allowing for story-driven experiences.</p>
+                            <div class="mt-4 flex space-x-2">
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Custom Maps</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Restricted Editing</span>
+                                <span class="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">Quests</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 游戏机制 -->
+            <section id="mechanics" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">Game Mechanics</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-4 rounded-full flex-shrink-0">
+                                <i class="fa fa-crafting text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-primary">Crafting</h3>
+                                <p>Minecraft's crafting system is at the heart of the game. By combining various materials in specific patterns on a crafting table or in your inventory, you can create tools, weapons, armor, and countless other items. From simple wooden picks to complex redstone contraptions, crafting is essential for progression and survival.</p>
+                                <div class="mt-4">
+                                    <img src="https://picsum.photos/seed/crafting/600/300" alt="Minecraft crafting recipes" class="rounded-lg w-full h-40 object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-4 rounded-full flex-shrink-0">
+                                <i class="fa fa-tree text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-primary">Exploration</h3>
+                                <p>The world of Minecraft is procedurally generated and virtually infinite. Explore diverse biomes such as forests, deserts, oceans, mountains, and jungles, each with unique flora, fauna, and resources. Discover hidden structures like villages, temples, and strongholds, and uncover the mysteries of the world.</p>
+                                <div class="mt-4">
+                                    <img src="https://picsum.photos/seed/exploration/600/300" alt="Minecraft exploration with mountains and rivers" class="rounded-lg w-full h-40 object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-4 rounded-full flex-shrink-0">
+                                <i class="fa fa-shield text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-primary">Combat</h3>
+                                <p>Combat in Minecraft involves facing various hostile mobs, including zombies, skeletons, creepers, and the iconic Enderman. Players can use weapons such as swords, bows, and tridents, and wear armor made from materials like leather, iron, diamond, and netherite to protect themselves.</p>
+                                <div class="mt-4">
+                                    <img src="https://picsum.photos/seed/combat/600/300" alt="Minecraft combat with player fighting zombies" class="rounded-lg w-full h-40 object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg p-8 transform hover:-translate-y-2 transition-all duration-300">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-primary/10 p-4 rounded-full flex-shrink-0">
+                                <i class="fa fa-bolt text-2xl text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold mb-3 text-primary">Redstone</h3>
+                                <p>Redstone is a unique resource in Minecraft that allows players to create complex circuits, mechanisms, and automation. From simple doors and traps to elaborate computers and farms, redstone engineering is a deep and rewarding aspect of the game that lets players harness their creativity and problem-solving skills.</p>
+                                <div class="mt-4">
+                                    <img src="https://picsum.photos/seed/redstone/600/300" alt="Complex redstone contraption in Minecraft" class="rounded-lg w-full h-40 object-cover">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 生物群系 -->
+            <section id="biomes" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">Biomes</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/forest/600/400" alt="Minecraft forest biome" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-bold text-white">Forest</h3>
+                                    <p class="text-white/80">Common biome with trees and wildlife</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700">Forests are common biomes filled with trees, grass, and various animals. They are a great source of wood and other resources, and often contain villages.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Oak Trees</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Passive Mobs</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Villages</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/desert/600/400" alt="Minecraft desert biome" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-bold text-white">Desert</h3>
+                                    <p class="text-white/80">Hot, dry biome with sand and cacti</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700">Deserts are vast, arid biomes composed mainly of sand. They feature cacti, desert villages, and desert temples containing valuable loot. Water is scarce here.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Sand</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Cacti</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Desert Temples</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/ocean/600/400" alt="Minecraft ocean biome" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-bold text-white">Ocean</h3>
+                                    <p class="text-white/80">Vast bodies of water with marine life</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700">Oceans are the largest biomes in Minecraft, covering much of the world. They contain various marine life, underwater ruins, and shipwrecks. Prone to strong currents.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Water</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Marine Life</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Shipwrecks</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/mountains/600/400" alt="Minecraft mountain biome" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-bold text-white">Mountains</h3>
+                                    <p class="text-white/80">Tall peaks and steep cliffs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700">Mountain biomes feature high peaks, steep cliffs, and often snow-capped summits. They are rich in minerals but can be challenging to navigate and build in.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Stone</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Snow</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Dangerous</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/jungle/600/400" alt="Minecraft jungle biome" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-bold text-white">Jungle</h3>
+                                    <p class="text-white/80">Lush, tropical biome with tall trees</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700">Jungles are dense, tropical biomes filled with tall trees, vines, and unique wildlife. They contain jungle temples and are a great source of cocoa beans and melons.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Tall Trees</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Jungle Temples</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Ocelots</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden group">
+                        <div class="relative h-48 overflow-hidden">
+                            <img src="https://picsum.photos/seed/nether/600/400" alt="Minecraft nether biome" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent flex items-end">
+                                <div class="p-4">
+                                    <h3 class="text-xl font-bold text-white">Nether</h3>
+                                    <p class="text-white/80">Hellish dimension with unique resources</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-4">
+                            <p class="text-gray-700">The Nether is a dangerous, fiery dimension filled with unique resources like netherite, ghasts, and blaze rods. It features distinctive terrain and structures like fortresses and bastions.</p>
+                            <div class="mt-3 flex flex-wrap gap-2">
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Fire</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Netherite</span>
+                                <span class="px-2 py-1 bg-primary/10 text-primary rounded-full text-xs">Hostile Mobs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 游戏进度 -->
+            <section id="progression" class="mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-dark mb-4">Game Progression</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto"></div>
+                </div>
+                
+                <div class="relative">
+                    <!-- 时间线 -->
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-primary/30"></div>
+                    
+                    <div class="space-y-12 relative">
+                        <!-- 阶段 1 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                                <h3 class="text-xl font-bold mb-3 text-primary">The First Night</h3>
+                                <p class="text-gray-700">Your first priority is to survive the first night. Gather wood, craft tools, and build a shelter before nightfall to avoid hostile mobs. This is the critical first step in any Minecraft adventure.</p>
+                            </div>
+                            <div class="md:w-12 flex justify-center order-1 md:order-2 relative">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg z-10">
+                                    <i class="fa fa-bed text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 order-3 hidden md:block">
+                                <img src="https://picsum.photos/seed/firstnight/400/300" alt="Minecraft first night survival" class="rounded-lg shadow-lg w-full">
+                            </div>
+                        </div>
+                        
+                        <!-- 阶段 2 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 order-1 hidden md:block">
+                                <img src="https://picsum.photos/seed/mining/400/300" alt="Minecraft mining for resources" class="rounded-lg shadow-lg w-full">
+                            </div>
+                            <div class="md:w-12 flex justify-center order-2 relative">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg z-10">
+                                    <i class="fa fa-pickaxe text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0">
+                                <h3 class="text-xl font-bold mb-3 text-primary">Mining and Resource Gathering</h3>
+                                <p class="text-gray-700">Once you've survived the first night, start mining for valuable resources like iron, coal, and diamonds. Build a proper base with storage and crafting facilities to organize your items.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- 阶段 3 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 md:text-right order-2 md:order-1 mt-6 md:mt-0">
+                                <h3 class="text-xl font-bold mb-3 text-primary">Exploration and Adventure</h3>
+                                <p class="text-gray-700">With basic resources and equipment, begin exploring the world. Discover biomes, structures, and dungeons. Collect rare items and prepare for more challenging adventures like visiting the Nether or End.</p>
+                            </div>
+                            <div class="md:w-12 flex justify-center order-1 md:order-2 relative">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg z-10">
+                                    <i class="fa fa-compass text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 order-3 hidden md:block">
+                                <img src="https://picsum.photos/seed/exploration2/400/300" alt="Minecraft exploration" class="rounded-lg shadow-lg w-full">
+                            </div>
+                        </div>
+                        
+                        <!-- 阶段 4 -->
+                        <div class="flex flex-col md:flex-row items-center">
+                            <div class="md:w-1/2 md:pr-12 order-1 hidden md:block">
+                                <img src="https://picsum.photos/seed/netherend/400/300" alt="Minecraft fighting the Ender Dragon" class="rounded-lg shadow-lg w-full">
+                            </div>
+                            <div class="md:w-12 flex justify-center order-2 relative">
+                                <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white shadow-lg z-10">
+                                    <i class="fa fa-dragon text-xl"></i>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 md:pl-12 order-3 mt-6 md:mt-0">
+                                <h3 class="text-xl font-bold mb-3 text-primary">The End and Beyond</h3>
+                                <p class="text-gray-700">Travel to the End dimension and face the Ender Dragon, the game's main boss. After defeating the dragon, you can explore further, tackle challenging objectives, or focus on building and creativity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-dark text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fa fa-cubes text-2xl text-primary"></i>
+                        <span class="text-xl font-bold">Minecraft World</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Your source for all things Minecraft. Explore, build, and connect with the community.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-primary transition-colors duration-300">
+                            <i class="fa fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-primary">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors duration-300">Home</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Gameplay</a></li>
+                        <li><a href="features.html" class="text-gray-400 hover:text-white transition-colors duration-300">Features</a></li>
+                        <li><a href="community.html" class="text-gray-400 hover:text-white transition-colors duration-300">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-primary">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Wiki</a></a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Mods</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Skins</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">Servers</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-primary">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe to get the latest news and updates.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary w-full">
+                        <button type="submit" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-r-lg transition-colors duration-300">
+                            <i class="fa fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-500">© 2025 Minecraft World. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300">Privacy Policy</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300">Terms of Service</a>
+                    <a href="#" class="text-gray-500 hover:text-white transition-colors duration-300">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+    
